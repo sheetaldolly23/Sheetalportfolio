@@ -87,4 +87,632 @@
         }
 
         .section-title {
-            font-size: 2.
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--pistachio-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* Hero / About Section */
+        #about {
+            background-color: var(--bg-white);
+            padding-top: 10rem;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--pistachio-dark);
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .bio-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .vp-card {
+            background-color: var(--bg-lightest);
+            border-left: 5px solid var(--pistachio-main);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .vp-card h3 {
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        /* Timeline Section */
+        #timeline {
+            background-color: var(--bg-lightest);
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto 0 auto;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--border);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+        }
+
+        .timeline-block {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-block::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            right: -7px;
+            background-color: var(--bg-lightest);
+            border: 3px solid var(--pistachio-dark);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+        .right::after { left: -7px; }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .timeline-content h3 {
+            color: var(--pistachio-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Grid Layout for Players */
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .player-card {
+            background-color: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .player-card i {
+            font-size: 1.75rem;
+            color: var(--pistachio-dark);
+            margin-bottom: 1rem;
+        }
+
+        .player-card h4 {
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Interactive Icon Grid for Artifacts Portfolio */
+        #artifacts {
+            background-color: var(--bg-white);
+            text-align: center;
+        }
+
+        .artifacts-icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .artifact-icon-card {
+            background-color: var(--bg-lightest);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .artifact-icon-card:hover {
+            transform: translateY(-8px);
+            background-color: var(--pistachio-light);
+            border-color: var(--pistachio-main);
+            box-shadow: 0 12px 20px rgba(74, 107, 73, 0.15);
+        }
+
+        .artifact-icon-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--bg-white);
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .artifact-icon-card:hover .artifact-icon-container {
+            background-color: var(--pistachio-dark);
+            border-color: var(--pistachio-dark);
+        }
+
+        .artifact-icon-container i {
+            font-size: 2rem;
+            color: var(--pistachio-dark);
+            transition: color 0.3s ease;
+        }
+
+        .artifact-icon-card:hover .artifact-icon-container i {
+            color: var(--bg-white);
+        }
+
+        .artifact-icon-card h3 {
+            color: var(--text-main);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .artifact-icon-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .artifact-subheading {
+            font-weight: 600;
+            color: var(--pistachio-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Side Draw Pop-up Drawer styles */
+        .side-popup {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 550px;
+            max-width: 100%;
+            height: 100%;
+            background-color: var(--bg-white);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.08);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .side-popup.open {
+            right: 0;
+        }
+
+        .popup-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-lightest);
+        }
+
+        .popup-header h3 {
+            color: var(--pistachio-dark);
+            font-size: 1.4rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: var(--pistachio-dark);
+        }
+
+        .popup-body {
+            padding: 2rem;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        /* Overlay blur filter backdrop */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+            display: none;
+        }
+
+        .overlay.open {
+            display: block;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--bg-lightest);
+            text-align: center;
+            padding: 6rem 10%;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            border-color: var(--pistachio-main);
+            background-color: var(--pistachio-light);
+            color: var(--pistachio-dark);
+        }
+
+        footer {
+            background-color: var(--bg-white);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            #about { grid-template-columns: 1fr; }
+            .timeline-container::after { left: 40px; }
+            .timeline-block { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-block::after { left: 33px; }
+            .right { left: 0%; }
+            nav ul { display: none; }
+            .side-popup { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay" id="popupOverlay"></div>
+
+    <nav>
+        <a href="#" class="logo">SHEETAL SONTAKKE</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#timeline">AI Journey</a></li>
+            <li><a href="#artifacts">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div>
+            <h1 class="hero-title">Sheetal Sontakke</h1>
+            <div class="hero-subtitle">Data Analyst & AI Specialist</div>
+            
+            <h2 class="artifact-subheading" style="color: var(--text-muted);">Professional Bio</h2>
+            <p class="bio-text">
+                I am a data professional driven by a passion for continuous learning and a commitment to staying at the forefront of technological innovation. My decision to pursue a Master’s degree in Artificial Intelligence was sparked during my time working at Synchrony Financial. Immersed in the fast-paced financial technology sector, I witnessed firsthand how AI was rapidly reshaping business operations, predictive modeling, and data strategy.
+            </p>
+            <p class="bio-text">
+                Recognizing that true impact lies in the proactive adoption of emerging technologies, I chose to upgrade my skills to bridge the gap between traditional data analytics and modern AI. My aspiration is to leverage this advanced training as a Data Analyst with AI integration, transforming complex datasets into forward-looking, intelligent business strategies.
+            </p>
+        </div>
+
+        <div>
+            <div class="vp-card">
+                <h3><i class="fa-solid fa-gem" style="color: var(--pistachio-dark); margin-right: 0.5rem;"></i> Value Proposition</h3>
+                <p class="bio-text" style="font-size: 0.95rem; margin-bottom: 0; color: var(--text-main);">
+                    <strong>"Empowering Data Analytics with Forward-Thinking AI Integration."</strong><br><br>
+                    My unique value stems from a blend of real-world corporate experience and cutting-edge technical training. Having seen how major financial systems operate, I understand the practical business problems that organizations face. 
+                    <br><br>
+                    I don't just analyze historical data to report what *has* happened; my active training in AI allows me to introduce predictive capabilities and automated solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline">
+        <h2 class="section-title">The Journey of Artificial Intelligence (1950–2026)</h2>
+        <p class="bio-text" style="max-width: 800px;">
+            As an aspiring Data Analyst with AI integration capabilities, understanding the evolution of computing, algorithmic shifts, and infrastructure is vital.
+        </p>
+
+        <div class="timeline-container">
+            <div class="timeline-block left">
+                <div class="timeline-content">
+                    <h3>1950s: Foundational Era</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">Alan Turing introduces the "Turing Test," defining the initial benchmark for machine intelligence.</p>
+                </div>
+            </div>
+            <div class="timeline-block right">
+                <div class="timeline-content">
+                    <h3>1970s - 1980s: AI Winters</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">Optimism hits a wall due to computational limits. Funding dries up as rule-based expert systems fail real-world tests.</p>
+                </div>
+            </div>
+            <div class="timeline-block left">
+                <div class="timeline-content">
+                    <h3>2010s: Deep Learning & Cloud Boom</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">The rise of internet-scale datasets and distributed cloud infrastructure lets deep neural networks scale.</p>
+                </div>
+            </div>
+            <div class="timeline-block right">
+                <div class="timeline-content">
+                    <h3>2017: The Transformer Paradigm Shift</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">Google Researchers release "Attention Is All You Need," introducing the transformative mechanism powering today's AI systems.</p>
+                </div>
+            </div>
+            <div class="timeline-block left">
+                <div class="timeline-content">
+                    <h3>2020s - 2026: The Generative AI Explosion</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">AI scales to foundational infrastructure. Systems alter consumer analytics, risk alignment models, and asset strategy.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="players-grid">
+            <div class="player-card">
+                <i class="fa-solid fa-microchip"></i>
+                <h4>NVIDIA</h4>
+                <p class="bio-text" style="font-size: 0.85rem; margin-bottom:0; text-align:center;">Provides the processing engine for deep learning processing networks.</p>
+            </div>
+            <div class="player-card">
+                <i class="fa-solid fa-brain"></i>
+                <h4>OpenAI</h4>
+                <p class="bio-text" style="font-size: 0.85rem; margin-bottom:0; text-align:center;">Primary driver behind structural Generative AI deployment loops.</p>
+            </div>
+            <div class="player-card">
+                <i class="fa-solid fa-g"></i>
+                <h4>Google DeepMind</h4>
+                <p class="bio-text" style="font-size: 0.85rem; margin-bottom:0; text-align:center;">Pioneered core Transformer models and deep reinforcement logic frameworks.</p>
+            </div>
+            <div class="player-card">
+                <i class="fa-solid fa-cloud"></i>
+                <h4>Microsoft</h4>
+                <p class="bio-text" style="font-size: 0.85rem; margin-bottom:0; text-align:center;">Core strategic hyperscaler deploying cloud analytics globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="artifacts">
+        <h2 class="section-title">Portfolio Showcase</h2>
+        <p class="bio-text" style="text-align: center; max-width: 700px; margin: 0 auto;">
+            Select any project icon below to open its comprehensive abstract, including structural workflows, core objectives, and strategic analytics value.
+        </p>
+
+        <div class="artifacts-icon-grid">
+            <div class="artifact-icon-card" onclick="openArtifact('artifact1')">
+                <div class="artifact-icon-container">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h3>AI Matching Bot</h3>
+                <p>Voices of Tomorrow Platform Ecosystem</p>
+            </div>
+
+            <div class="artifact-icon-card" onclick="openArtifact('artifact2')">
+                <div class="artifact-icon-container">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Fraud & Compliance</h3>
+                <p>Synchrony Financial Analytics Handoffs</p>
+            </div>
+
+            <div class="artifact-icon-card" onclick="openArtifact('artifact3')">
+                <div class="artifact-icon-container">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Demand Forecasting</h3>
+                <p>PyPI Open-Source Package Trend Lifecycles</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="side-popup" id="artifact1">
+        <div class="popup-header">
+            <h3>Artifact #1 Abstract</h3>
+            <button class="close-btn" onclick="closeArtifact('artifact1')">&times;</button>
+        </div>
+        <div class="popup-body">
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Voices of Tomorrow: Building an AI-Driven Speaker Matching Platform</h2>
+            
+            <div class="artifact-subheading">Introduction</div>
+            <p class="bio-text" style="font-size:0.95rem;">Voices of Tomorrow is a modern Speaker’s Bureau project built for an AI Master's program assignment. To streamline operations, our team engineered VIA (Virtual Intelligent Assistant) to map event criteria directly to user profiles.</p>
+
+            <div class="artifact-subheading">Description</div>
+            <p class="bio-text" style="font-size:0.95rem;">The project used explicit system prompts and text data file integrations. My responsibilities included engineering system rules and translating backend workflows into scannable user process infographics.</p>
+
+            <div class="artifact-subheading">Objective</div>
+            <p class="bio-text" style="font-size:0.95rem;">Automate manual profile matching loops while enforcing system prompts to block software hallucinations, tracking data precisely to verified structural fields.</p>
+
+            <div class="artifact-subheading">Process</div>
+            <p class="bio-text" style="font-size:0.95rem;">1. Profile Setup: Compiled background profiles for 8 speakers.<br>2. Rule Architecture: Implemented LLM constraints inside operational tool nodes.<br>3. Bot Training: Tested conversational loops via Google AI Studio and Poe tools.<br>4. UX Workflows: Generated end-to-end "How it Works" infographic wireframes.</p>
+
+            <div class="artifact-subheading">Tools and Technologies Used</div>
+            <p class="bio-text" style="font-size:0.95rem;">BoodlBox, Poe, Google AI Studio, Coze, Canvas/Infographic Mapping, Prompt Constraint Engineering.</p>
+
+            <div class="artifact-subheading">Value Proposition & Unique Value</div>
+            <p class="bio-text" style="font-size:0.95rem;">Highlights my capability to translate unstructured data directly into functional prompt-controlled applications to streamline resource allocation challenges.</p>
+
+            <div class="artifact-subheading">Relevance</div>
+            <p class="bio-text" style="font-size:0.95rem;">Directly shows hiring managers that I can build interactive system boundaries and write context rules rather than just reading static Excel files.</p>
+        </div>
+    </div>
+
+    <div class="side-popup" id="artifact2">
+        <div class="popup-header">
+            <h3>Artifact #2 Abstract</h3>
+            <button class="close-btn" onclick="closeArtifact('artifact2')">&times;</button>
+        </div>
+        <div class="popup-body">
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Financial Fraud Risk Mitigation: Data Analysis, SSN Verification, and Regulatory Compliance Pipelines</h2>
+            
+            <div class="artifact-subheading">Introduction</div>
+            <p class="bio-text" style="font-size:0.95rem;">During my tenure in the Fraud Department at Synchrony Financial, I acted as an analytical line of defense against financial crimes, identity theft, and transaction tampering.</p>
+
+            <div class="artifact-subheading">Description</div>
+            <p class="bio-text" style="font-size:0.95rem;">This operational role handled financial risk logging. I monitored PII files, checked Social Security documentation for errors, and prepared compliant files for legal auditing frameworks.</p>
+
+            <div class="artifact-subheading">Objective</div>
+            <p class="bio-text" style="font-size:0.95rem;">Detect identity vulnerabilities, secure high-risk customer registry blocks, and run database workflows compliant with ECOA and FCRA legal requirements.</p>
+
+            <div class="artifact-subheading">Process</div>
+            <p class="bio-text" style="font-size:0.95rem;">1. Data Audits: Tracked accounts for mismatched information indicators.<br>2. SSN Validation: Evaluated records against standard regulatory verification profiles.<br>3. Compliance Reporting: Extracted logs and prepared structured summaries for risk handoffs.<br>4. Strategy Alignment: Partnered with oversight managers to adapt controls to risk changes.</p>
+
+            <div class="artifact-subheading">Tools and Technologies Used</div>
+            <p class="bio-text" style="font-size:0.95rem;">Internal Corporate Fraud Infrastructure, Enterprise Database Query Tools, ECOA/FCRA Framework Rules, Advanced Microsoft Excel.</p>
+
+            <div class="artifact-subheading">Value Proposition & Unique Value</div>
+            <p class="bio-text" style="font-size:0.95rem;">Proves experience handling highly sensitive, protected files at enterprise-scale with complete accuracy, meeting strict federal standards.</p>
+
+            <div class="artifact-subheading">Relevance</div>
+            <p class="bio-text" style="font-size:0.95rem;">Establishes real-world expertise in data governance and access control—vital skills before implementing automated machine learning architectures on backend records.</p>
+        </div>
+    </div>
+
+    <div class="side-popup" id="artifact3">
+        <div class="popup-header">
+            <h3>Artifact #3 Abstract</h3>
+            <button class="close-btn" onclick="closeArtifact('artifact3')">&times;</button>
+        </div>
+        <div class="popup-body">
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">PyPI Package Demand Analytics: Open-Source Metrics to E-Commerce Personalization Indicators</h2>
+            
+            <div class="artifact-subheading">Introduction</div>
+            <p class="bio-text" style="font-size:0.95rem;">This core analytics project connected open-source software usage patterns directly to e-commerce consumer recommendation logic, simulating an Amazon-style digital shelf optimization loop.</p>
+
+            <div class="artifact-subheading">Description</div>
+            <p class="bio-text" style="font-size:0.95rem;">The project processed short, medium, and long-term data points for 46 Python packages, engineering momentum indicators to show which resources deserved platform visibility.</p>
+
+            <div class="artifact-subheading">Objective</div>
+            <p class="bio-text" style="font-size:0.95rem;">Build programmatic cleaning operations, map variations in usage, and provide data-driven visibility strategies for system managers.</p>
+
+            <div class="artifact-subheading">Process</div>
+            <p class="bio-text" style="font-size:0.95rem;">1. Processing: Cleansed empty metrics and formatted types using Pandas.<br>2. Engineering: Added rolling metrics, market shares, and dynamic rankings.<br>3. Segmentation: Categorized packages into infrastructure utility groups.<br>4. Visualization: Created horizontal volume comparisons and momentum line charts.</p>
+
+            <div class="artifact-subheading">Tools and Technologies Used</div>
+            <p class="bio-text" style="font-size:0.95rem;">Python (Pandas, NumPy), Matplotlib, Seaborn, Rolling Time-Window Trend Logic.</p>
+
+            <div class="artifact-subheading">Value Proposition & Unique Value</div>
+            <p class="bio-text" style="font-size:0.95rem;">Demonstrates a full data cleaning and feature engineering lifecycle, transforming raw usage numbers into a clear visual product strategy.</p>
+
+            <div class="artifact-subheading">Relevance</div>
+            <p class="bio-text" style="font-size:0.95rem;">Validates core data engineering and visualization skills, showing the precise skills required to prepare inputs for analytics systems.</p>
+        </div>
+    </div>
+
+
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem auto;">
+            I am always open to discussing data analyst positions, AI integrations, or collaborative project opportunities.
+        </p>
+        <div class="contact-links">
+            <a href="mailto:sheetal.sontakke@myemail.indwes.edu"><i class="fa-solid fa-envelope" style="color: var(--pistachio-dark);"></i> sheetal.sontakke@myemail.indwes.edu</a>
+            <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i> LinkedIn</a>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github" style="color: #333;"></i> GitHub</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sheetal Sontakke. Built for GitHub Pages. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const overlay = document.getElementById('popupOverlay');
+
+        function openArtifact(id) {
+            document.getElementById(id).classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function function closeArtifact(id) {
+            document.getElementById(id).classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto'; // Re-enable background scrolling
+        }
+
+        // Close when clicking outside on the overlay
+        overlay.addEventListener('click', () => {
+            document.querySelectorAll('.side-popup').forEach(popup => {
+                popup.classList.remove('open');
+            });
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+</body>
+</html>
