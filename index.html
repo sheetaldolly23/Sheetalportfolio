@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheetal Sontakke | Data Analyst & AI Specialist</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --text-dark: #0f172a;
+            --text-light: #475569;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --accent: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 10%;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul a:hover {
+            color: var(--primary);
+        }
+
+        /* Sections General */
+        section {
+            padding: 6rem 10% 4rem 10%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            letter-spacing: -0.5px;
+        }
+
+        /* Hero / About Section */
+        #about {
+            background-color: var(--bg-light);
+            padding-top: 9rem;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--primary-light);
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .bio-text {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .vp-card {
+            background-color: var(--white);
+            border-left: 5px solid var(--accent);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+
+        .vp-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        /* Timeline Section */
+        #timeline {
+            background-color: var(--white);
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto 0 auto;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--border);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-block {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-block::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--white);
+            border: 3px solid var(--primary-light);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .right::after { left: -8px; }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: var(--bg-light);
+            position: relative;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Grid Layout for Players */
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .player-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .player-card i {
+            font-size: 2rem;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .player-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Artifacts Section */
+        #artifacts {
+            background-color: var(--bg-light);
+        }
+
+        .artifact-card {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02);
+        }
+
+        .artifact-grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .artifact-header h3 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .artifact-subheading {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 1.2rem;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .tag {
+            background-color: var(--bg-light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 10%;
+            border-bottom: none;
+        }
+
+        #contact h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            background-color: #0b1329;
+            color: #64748b;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            #about, .artifact-grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .timeline-container::after { left: 40px; }
+            .timeline-block { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-block::after { left: 32px; }
+            .right { left: 0%; }
+            nav ul { display: none; } /* Simplified for template */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">SHEETAL SONTAKKE</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#timeline">AI Journey</a></li>
+            <li><a href="#artifacts">Portfolio Artifacts</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section 1: Hero & Professional Bio -->
+    <section id="about">
+        <div>
+            <h1 class="hero-title">Sheetal Sontakke</h1>
+            <div class="hero-subtitle">Data Analyst & AI Specialist</div>
+            
+            <h2 class="artifact-subheading">Professional Bio</h2>
+            <p class="bio-text">
+                I am a data professional driven by a passion for continuous learning and a commitment to staying at the forefront of technological innovation. My decision to pursue a Master’s degree in Artificial Intelligence was sparked during my time working at Synchrony Financial. Immersed in the fast-paced financial technology sector, I witnessed firsthand how AI was rapidly reshaping business operations, predictive modeling, and data strategy.
+            </p>
+            <p class="bio-text">
+                Recognizing that true impact lies in the proactive adoption of emerging technologies, I chose to upgrade my skills to bridge the gap between traditional data analytics and modern AI. My aspiration is to leverage this advanced training as a Data Analyst with AI integration, transforming complex datasets into forward-looking, intelligent business strategies.
+            </p>
+        </div>
+
+        <div>
+            <div class="vp-card">
+                <h3><i class="fa-solid fa-gem" style="color: var(--accent); margin-right: 0.5rem;"></i> Personal Value Proposition</h3>
+                <p class="bio-text" style="font-size: 0.95rem; margin-bottom: 0;">
+                    <strong>"Empowering Data Analytics with Forward-Thinking AI Integration."</strong><br><br>
+                    My unique value stems from a blend of real-world corporate experience and cutting-edge technical training. Having seen how major financial systems operate, I understand the practical business problems that organizations face. 
+                    <br><br>
+                    I don't just analyze historical data to report what *has* happened; my active training in AI allows me to introduce predictive capabilities and automated solutions. I bring a mindset of continuous growth and adaptability, ensuring that data strategies are prepared for the next wave of technological evolution.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Industry Context & Timeline -->
+    <section id="timeline">
+        <h2 class="section-title">The Journey of Artificial Intelligence (1950–2026)</h2>
+        <p class="bio-text" style="max-width: 800px;">
+            As an aspiring Data Analyst with AI integration capabilities, understanding the evolution of computing, algorithmic shifts, and infrastructure is vital. This tracking shows the framework changes leading up to today's cloud-driven ecosystem[cite: 1].
+        </p>
+
+        <div class="timeline-container">
+            <div class="timeline-block left">
+                <div class="timeline-content">
+                    <h3>1950s: Foundational Era</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">Alan Turing introduces the "Turing Test," defining the initial benchmark for machine intelligence. Early pioneers build simple rule-based logic processors[cite: 1].</p>
+                </div>
+            </div>
+            <div class="timeline-block right">
+                <div class="timeline-content">
+                    <h3>1970s - 1980s: AI Winters</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">Optimism hits a wall due to computational limits and lack of data. Funding dries up as rule-based expert systems fail to handle real-world complexity[cite: 1].</p>
+                </div>
+            </div>
+            <div class="timeline-block left">
+                <div class="timeline-content">
+                    <h3>2010s: Deep Learning & Cloud Boom</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">The rise of internet-scale data collections and distributed cloud architecture lets neural networks scale and outperform standard algorithms[cite: 1].</p>
+                </div>
+            </div>
+            <div class="timeline-block right">
+                <div class="timeline-content">
+                    <h3>2017: The Transformer Paradigm Shift</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">Google Researchers release "Attention Is All You Need," introducing the Transformer architecture, completely altering sequential data processing[cite: 1].</p>
+                </div>
+            </div>
+            <div class="timeline-block left">
+                <div class="timeline-content">
+                    <h3>2020s - 2026: The Generative AI Explosion</h3>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">AI transitions to foundational infrastructure. Massive enterprise integrations alter risk strategies, consumer tracking, and analytical pipelines[cite: 1].</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="artifact-subheading" style="margin-top: 4rem; text-align: center;">Major Infrastructure Players</h3>
+        <div class="players-grid">
+            <div class="player-card">
+                <i class="fa-solid fa-microchip"></i>
+                <h4>NVIDIA</h4>
+                <p class="bio-text" style="font-size: 0.9rem; margin-bottom:0; text-align:center;">Provides high-performance GPU hardware engines for deep learning processing[cite: 1].</p>
+            </div>
+            <div class="player-card">
+                <i class="fa-solid fa-brain"></i>
+                <h4>OpenAI</h4>
+                <p class="bio-text" style="font-size: 0.9rem; margin-bottom:0; text-align:center;">Primary driver behind Generative AI explosions using GPT frameworks[cite: 1].</p>
+            </div>
+            <div class="player-card">
+                <i class="fa-solid fa-g"></i>
+                <h4>Google DeepMind</h4>
+                <p class="bio-text" style="font-size: 0.9rem; margin-bottom:0; text-align:center;">Pioneered Transformer models and reinforcement frameworks like AlphaGo[cite: 1].</p>
+            </div>
+            <div class="player-card">
+                <i class="fa-solid fa-cloud"></i>
+                <h4>Microsoft</h4>
+                <p class="bio-text" style="font-size: 0.9rem; margin-bottom:0; text-align:center;">Cornerstone cloud infrastructure partner deploying global enterprise AI[cite: 1].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Artifacts -->
+    <section id="artifacts">
+        <h2 class="section-title">Portfolio Artifacts</h2>
+        <p class="bio-text" style="max-width: 800px; margin-bottom: 3rem;">
+            The following selected works highlight distinct analytical and technical proficiencies, spanning interactive AI system design, large-scale compliance engineering, and robust statistical visual storytelling.
+        </p>
+
+        <!-- Artifact 1 -->
+        <div class="artifact-card">
+            <div class="artifact-header">
+                <h3>Artifact 1: Voices of Tomorrow — AI-Driven Speaker Matching Platform (VIA)</h3>
+                <div class="tags">
+                    <span class="tag">Prompt Engineering</span>
+                    <span class="tag">System Design</span>
+                    <span class="tag">BoodlBox</span>
+                    <span class="tag">Google AI Studio</span>
+                    <span class="tag">Workflow Mapping</span>
+                </div>
+            </div>
+            
+            <div class="artifact-grid-2col">
+                <div>
+                    <h4 class="artifact-subheading">Introduction</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">Voices of Tomorrow is a modern Speaker’s Bureau engineered alongside my AI Master's program[cite: 1]. To automate traditional booking operations, our team engineered VIA (Virtual Intelligent Assistant) to analyze user event needs and run automated matching loops[cite: 1].</p>
+                    
+                    <h4 class="artifact-subheading">Description</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">The project combined interactive prompt constraints with document ingestion. Within this system, my focus centered on systemic data configuration, writing robust system constraints, and translating raw mapping logic into customer-ready visualizations[cite: 1].</p>
+                    
+                    <h4 class="artifact-subheading">Objective</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">Automate custom matching workflows while enforcing strict logical boundaries on LLM processing to prevent system hallucinations and accurately filter inputs against our verified speaker profile database[cite: 1].</p>
+                </div>
+                <div>
+                    <h4 class="artifact-subheading">Process</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">1. Profile Data Engineering: Created structured metadata schemas across 8 profiles.<br>2. Prompt Architecture: Wrote system guardrails using advanced iterative processing frameworks.<br>3. Bot Deployment: Configured interactive conversational logic layers.<br>4. UX Mapping: Created detailed "How It Works" architectural process flows[cite: 1].</p>
+                    
+                    <h4 class="artifact-subheading">Value Proposition & Unique Value</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">Proves my capability to manage the entire life cycle of an AI-driven product, engineering raw data profiles directly into logical backend constraints to solve consumer matching friction[cite: 1].</p>
+                    
+                    <h4 class="artifact-subheading">Relevance</h4>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">Demonstrates that I don't just process static data tables—I know how to structure text datasets, coordinate collaborative AI task forces, and architect functional agent systems[cite: 1].</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artifact 2 -->
+        <div class="artifact-card">
+            <div class="artifact-header">
+                <h3>Artifact 2: Financial Fraud Risk Mitigation & Regulatory Compliance Pipelines</h3>
+                <div class="tags">
+                    <span class="tag">Enterprise Risk Strategy</span>
+                    <span class="tag">PII Data Auditing</span>
+                    <span class="tag">ECOA Compliance</span>
+                    <span class="tag">FCRA Compliance</span>
+                    <span class="tag">Data Architecture</span>
+                </div>
+            </div>
+            
+            <div class="artifact-grid-2col">
+                <div>
+                    <h4 class="artifact-subheading">Introduction</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">During my tenure in the Fraud Department at Synchrony Financial, I acted as an analytical line of defense against financial crimes, identity theft, and unauthorized transactional manipulations.</p>
+                    
+                    <h4 class="artifact-subheading">Description</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">This role required manipulating financial database information to spot anomalies. I managed high-risk Social Security Number (SSN) validation protocols and structured cross-functional compliance transfers for federal review boards.</p>
+                    
+                    <h4 class="artifact-subheading">Objective</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">Identify pattern variances indicating fraud, protect high-stakes PII registry fields, and streamline data escalation routes straight into internal ECOA and FCRA governance strategies.</p>
+                </div>
+                <div>
+                    <h4 class="artifact-subheading">Process</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">1. Ingestion: Tracked credit applications for mismatch signals.<br>2. Auditing: Cross-referenced documentation flags against consumer history database frameworks.<br>3. Reporting: Logged and formatted case summaries for regulatory handoffs.<br>4. Strategy Alignment: Updated validation routines alongside risk assurance guidelines.</p>
+                    
+                    <h4 class="artifact-subheading">Value Proposition & Unique Value</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">Highlights my real-world corporate experience managing highly regulated banking operations with complete operational accuracy. It shows high data integrity under legal frameworks.</p>
+                    
+                    <h4 class="artifact-subheading">Relevance</h4>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">Establishes a solid foundational background in enterprise governance, security protocols, and auditing cycles, which are required prerequisites before automating predictive systems inside corporate networks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artifact 3 -->
+        <div class="artifact-card">
+            <div class="artifact-header">
+                <h3>Artifact 3: PyPI Package Demand Analytics & Personalization Architecture</h3>
+                <div class="tags">
+                    <span class="tag">Python (Pandas/NumPy)</span>
+                    <span class="tag">Matplotlib / Seaborn</span>
+                    <span class="tag">Feature Engineering</span>
+                    <span class="tag">E-Commerce Logic</span>
+                    <span class="tag">Trend Analysis</span>
+                </div>
+            </div>
+            
+            <div class="artifact-grid-2col">
+                <div>
+                    <h4 class="artifact-subheading">Introduction</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">This project bridges open-source package demand signals with commercial application design by modeling PyPI package download behavior similarly to an Amazon E-Commerce product demand ecosystem[cite: 2].</p>
+                    
+                    <h4 class="artifact-subheading">Description</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">The project analyzes a dataset of 46 distinct PyPI packages across short, medium, and long-term consumption windows[cite: 2]. The work involved programmatic cleaning, metric generation, and data visualization[cite: 2].</p>
+                    
+                    <h4 class="artifact-subheading">Objective</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">Identify priority packages needing capacity support and platform visibility, build functional data pipelines, and separate short-term spikes from sustained infrastructure dependencies[cite: 2].</p>
+                </div>
+                <div>
+                    <h4 class="artifact-subheading">Process</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">1. Data Cleansing: Purged duplicates, cast numerical formats, and handled omissions[cite: 2].<br>2. Feature Engineering: Added moving rolling averages, volume ratios, and market share indicators[cite: 2].<br>3. Modeling: Segmented data based on operational utilities[cite: 2].<br>4. Visualization: Generated horizontal volume bars and trend line charts[cite: 2].</p>
+                    
+                    <h4 class="artifact-subheading">Value Proposition & Unique Value</h4>
+                    <p class="bio-text" style="font-size: 0.95rem;">Showcases my complete data analytics skill sets. I successfully converted raw activity data into actionable e-commerce recommendation insights[cite: 2].</p>
+                    
+                    <h4 class="artifact-subheading">Relevance</h4>
+                    <p class="bio-text" style="font-size: 0.95rem; margin-bottom:0;">Proves solid competency in core Business Intelligence and Data Wrangling. Clean code pipelines and visual storytelling are essential to powering future AI models[cite: 2].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Contact -->
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 2rem auto;">
+            I am always open to discussing data analyst positions, AI integrations, or collaborative project opportunities.
+        </p>
+        <div class="contact-links">
+            <a href="mailto:contact@voicesoftomorrow.com"><i class="fa-solid fa-envelope"></i> Email Me</a>
+            <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sheetal Sontakke. Built for GitHub Pages. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
